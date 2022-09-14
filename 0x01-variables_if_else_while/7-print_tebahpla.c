@@ -2,10 +2,12 @@
 /**
  * main - Entry point
  *
+ * Description: Print the lowercase alphabet in reverse.
+ *
  * Remain: Always 0 (Success)
  */
 
-int main(void)
+int void main(...)
 {
 	char c = 'z';
 

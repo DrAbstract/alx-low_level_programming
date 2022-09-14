@@ -7,7 +7,7 @@
  * Remain: Always 0 (Success)
  */
 
-int void main(...)
+int main(void)
 {
 	char c = 'z';
 

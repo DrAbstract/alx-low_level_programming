@@ -15,5 +15,6 @@ int _putchar(char c);
 int main(void);
 void print_number(int n);
 void num_to_char(unsigned int n);
+int main(void);
 
 #endif

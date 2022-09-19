@@ -1,1 +1,1 @@
-What am I supposed to do here ?
+What should I know about pointers ?

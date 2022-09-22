@@ -1,1 +1,1 @@
-What should I know about pointers ?
+I will keep improving daily

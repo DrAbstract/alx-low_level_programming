@@ -12,48 +12,37 @@
 dog_t *new_dog(char *name, float age, char *owner)
 
 {
-dog_t *new_dog;
-char *dog_name, *dog_owner;
-new_dog = malloc(sizeof(dog_t));
-if (new_dog == NULL)
-return (new_dog);
-dog_name = malloc(sizeof(name));
-if (dog_name == NULL)
+int i = 0, j = 0, k;
+dog_t *doge;
+while (name[i] != '\0')
+i++;
+while (owner[j] != '\0')
+j++;
+doge = malloc(sizeof(dog_t));
+if (doge == NULL)
 {
-free(new_dog);
+free(doge);
 return (NULL);
 }
-dog_owner = malloc(sizeof(owner));
-if (dog_owner == NULL)
+doge->name = malloc(i * sizeof(doge->name));
+if (doge->name == NULL)
 {
-free(dog_name);
-free(new_dog);
+free(doge->name);
+free(doge);
 return (NULL);
 }
-_strcpy(dog_name, name);
-_strcpy(dog_owner, owner);
-new_dog->name = dog_name;
-new_dog->owner = dog_owner;
-new_dog->age = age;
-return (new_dog);
-}
-
-/**
- * _strcpy - copies string to given memory location
- * @dest: where the string needs to be copied
- * @src: where the string is
- *
- * Return: char
- */
-char *_strcpy(char *dest, char *src)
-
+for (k = 0; k <= i; k++)
+doge->name[k] = name[k];
+doge->age = age;
+doge->owner = malloc(j * sizeof(doge->owner));
+if (doge->owner == NULL)
 {
-int len = 0;
-while (*(src + len) != '\0')
-{
-*(dest + len) = *(src + len);
-len++;
+free(doge->owner);
+free(doge->name);
+free(doge);
+return (NULL);
 }
-*(dest + len) = *(src + len);
-return (dest);
+for (k = 0; k <= j; k++)
+doge->owner[k] = owner[k];
+return (doge);
 }
